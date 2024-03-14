@@ -52,6 +52,7 @@
 import React from 'react'
 import FormView from './Components/Form/FormView'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Admin from './Components/Admin/Admin';
 
 
 export default function App() {
@@ -63,7 +64,7 @@ export default function App() {
           <Route path="/" element={<FormView />} />
       </Routes>
       <Routes>
-          <Route path="/" element={<FormView />} />
+          <Route path="/admin" element={<Admin/>} />
       </Routes>
       </BrowserRouter>
     </div>

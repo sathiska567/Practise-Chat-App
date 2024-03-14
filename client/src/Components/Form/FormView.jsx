@@ -9,9 +9,25 @@ console.log(socket);
 
 const FormView = () => {
 
-  
+ 
 const onFinish = async (values) => {
-  console.log('Success:', values);
+
+  // if (currentMessage !== "") {
+  //   const messageData = {
+  //     room: room,
+  //     author: username,
+  //     time:  new Date(Date.now()).getHours() + ":" + new Date(Date.now()).getMinutes(),
+  //   };
+
+  if(values !== ""){
+     const messageData = {
+       message:"hello"
+     }
+     const response = await socket.emit("send_message", messageData);
+     
+     console.log(response)
+  }
+  
 
 };
 const onFinishFailed = (errorInfo) => {
@@ -46,19 +62,6 @@ const onFinishFailed = (errorInfo) => {
             {
               required: true,
               message: 'Please input your username!',
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your email!',
             },
           ]}
         >
